@@ -13,7 +13,7 @@
 <a href="index.html">← revenir à la liste des exos</a>
 <div class="card">
     <!--Instructions-->
-    <p class="h6 font-weight-bold text-center">#09 - Décomposition d'une couleur</p>
+    <p class="h6 font-weight-bold text-center">#07 - Décomposition d'une couleur</p>
     <div class="instructions">
         <p class="text-secondary">Votre mission si toutefois vous l'acceptez, est d'afficher les couleurs primaires associées à la couleur secondaire sélectionnée</p>
         <br />
@@ -38,7 +38,19 @@
         let colors = document.getElementById("colors");
         let secondaryColor = colors.options[colors.selectedIndex].value;
 
-        // CODE HERE !
+        switch (secondaryColor) {
+            case 'green':
+                alert("Le vert est composé de bleu et de jaune");
+                break;
+            case 'purple':
+                alert("Le violet est composé de bleu et de rouge");
+                break;
+            case 'orange':
+                alert("L'orange est composé de rouge et de jaune");
+                break;
+            default:
+                console.log(secondaryColor + " n'est pas une couleur reconnue par ce programme");
+        }
     }
 </script>
 </body>

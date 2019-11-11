@@ -42,8 +42,26 @@
     function cartValue() {
         let articles = document.getElementById("articles");
         let selectedArticle = articles.options[articles.selectedIndex].value;
+        let promotion = document.getElementById("promotion").value;
+        let cartValue = price(selectedArticle);
 
-        // CODE HERE !
+        if (promotion === VALID_PROMOTION_CODE) {
+            cartValue = discountPrice(cartValue, 10);
+        }
+
+        alert("La valeur de votre panier est de " + cartValue)
+    }
+
+    function price(article) {
+        if (article === 'one') { return 30 }
+        if (article === 'two') { return 50 }
+        console.log("L'article n'est pas valide...");
+        return 0;
+    }
+
+    function discountPrice(price, percent) {
+        let discount = price * percent / 100;
+        return price - discount;
     }
 </script>
 </body>
