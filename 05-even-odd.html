@@ -38,7 +38,16 @@
         // AIDE : regarder du côté des modulos en javascript
 
         let number = document.getElementById("number").value;
-
+        let pair = number + " est pair";
+        let impair = number + " est impair";
+        // Si le nombre est divisible par 2 alors il est pair 
+        // le % est le modulo, c'est le reste de la division 
+        if (number%2 == 0) {
+           return alert(pair);
+        }
+        else {
+            alert(impair);
+        }
         // CODE HERE !
     }
 </script>

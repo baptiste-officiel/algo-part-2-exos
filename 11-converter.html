@@ -31,14 +31,30 @@
     </select>
 
     <br/>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" onclick="conv()">
         Connaître la valeur en USD->EUR ou EUR->USD
     </button>
 </div>
 
 <script type="text/javascript">
     // 1 EUR = 1.1015 USD
+    const EUR_TO_USD = 1.102;
     // CODE HERE !
+    function conv(){
+    let currencies = document.getElementById("currencies");
+    let selectedCurrency = currencies.option[currencies.selectedIndex].value;
+    let currentValue =parseInt(document.getElementById("value").value);
+
+    if (selectedCurrency == "eur") {
+       let newvalue = currentValue * EUR_TO_USD;
+       alert(`${currentValue} Euros -> ${newvalue.toFixed(2)} Dollars`);
+    } else if(selectedCurrency == "usd"){
+        let newvalue = currentValue * (1 / EUR_TO_USD);
+        alert(`${currentValue} Dollars -> ${newvalue.toFixed(2)} Euros`);
+    }
+}
+    
+
 </script>
 </body>
 </html>

@@ -22,18 +22,25 @@
     <input type="text" id="firstname" placeholder="Prénom"/>
     <input type="text" id="lastname" placeholder="Nom"/>
     <button type="button" class="btn btn-primary" onclick="displayMessage()">
+        <!-- Au clic sur le bouton, l'ordinateur éxécutera la fonction displayMessage  -->
         Afficher le message
     </button>
 </div>
 
 <script type="text/javascript">
     function displayMessage() {
+        // Début de la fonction displayMessage
         let firstname = document.getElementById("firstname").value;
+        // variable firstname, le firstname est acquis en allant chercher la valeur (value) renseignée par l'utilisateur dans l'input d'id="firstname" 
         let lastname = document.getElementById("lastname").value;
+        // Même procédure que le firstname mais pour le lastname 
         let fullname = firstname + " " + lastname.toUpperCase();
+        // On attibue à la variable fullname les valeurs de firstname et lastname (qu'on met en majuscules également) séparés d'un espace 
         let message = "Bonjour " + fullname;
+        // la variable message prend la valeur "Bonjour" suivie de la variable fullname 
 
         alert(message)
+        // Affichage de la variable message 
     }
 </script>
 </body>
